@@ -5,6 +5,7 @@ namespace at.jku.ssw.cc {
 /// Tokens are provided by the scanner for the parser.
 /// They hold additional information about the symbol.
 /// AW, woess@dotnet.jku.at
+
 public class Token {
 	public const int
 	//error token
