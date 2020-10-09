@@ -68,6 +68,7 @@ public class Scanner {
 	public static Token Next () {  //zzz
         // intenta formar un token de la entrada
         //linea=1, col=13 y apunta al blanco 
+       
         while ((ch == ' ') || (ch == LF) || (ch == CR)) // bloque que saltea los blancos 
         {
             NextCh();
@@ -77,7 +78,9 @@ public class Scanner {
         Token t = new Token(line, col);
         //if ('A' <= ch && 'z' >= ch) System.Console.WriteLine(ch + " es letra ");
         //if ('0' <= ch && '9' >= ch) System.Console.WriteLine(ch + " es nro ");
-        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) //es Letra
+        //if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') ) //es Letra
+
+        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ( ch == '_' ) ) //es Letra
          ReadName(t);
         else 
          if ('0' <= ch && '9' >= ch)
