@@ -42,6 +42,7 @@ namespace at.jku.ssw.cc
 
                 }
             }
+            //Program1.form1.arbolTokens.Nodes.Add("Tokens : ", pilaString );
             Program1.form1.richTextBox2.Text = pilaString;
             if (Parser.muestraCargaDeInstrs) Parser.MessageBoxCon2PregMaqVirtual();
         }
@@ -202,12 +203,32 @@ namespace at.jku.ssw.cc
         //static readonly Label undef;
 
         /* Reads ahead one symbol. */
+      
+        static int n = 0; // controla las pasadas
         static void Scan()
         {
             token = laToken;
             laToken = Scanner.Next();
             //La 1° vez q se ejecuta, token queda con Token(1, 1), laToken con "class" (primer token del programa)
             la = laToken.kind;
+
+
+            if (token.str == null) 
+            {
+                Program1.form1.arbolTokens.Nodes.Add("Pasada " + n + " - Token:  'NULL' " + " - LaToken:  '" + laToken.str + "'");
+                n++;
+                
+                //Code.Colorear(token.str);
+                //Code.Colorear(laToken.str);
+            } //Orellana probando
+
+            else
+            {
+                Program1.form1.arbolTokens.Nodes.Add("Pasada " + n + " - Token:  '" + token.str +"'"+ " - LaToken:  '" + laToken.str + "'"); //Orellana probando
+                n++;
+                Code.Colorear(token.str);
+                Code.Colorear(laToken.str);
+            }
         }
 
         /* Verifies symbol and reads ahead. */
@@ -218,6 +239,9 @@ namespace at.jku.ssw.cc
             else
                 Errors.Error("Se esperaba un: " + Token.names[expected]);
         }
+
+
+         
 
         static void Program()
         {
@@ -243,6 +267,10 @@ namespace at.jku.ssw.cc
             //Ahora token = "ProgrPpal" y laToken = "{"
             Code.Colorear("token");  //"class" ya lo pintó, ahora pinta "ProgrPpal"  (lo que hay en token)                                    
             Symbol prog = Tab.Insert(Symbol.Kinds.Prog, token.str, Tab.noType);//lo cuelga de universe
+            //tokenPest.Text="Inicio";
+            //Program1.form1.arbolTokens.Nodes.Add(tokenPest);// cuelga la primer pestaña correspondiente al inicio
+            //tokenPest.ExpandAll();
+            //Program1.form1.arbolTokens.Nodes.Add("Tokens: " + token.str +"LaToken: " + laToken.str); //Orellana probando
             Code.CreateMetadata(prog);
             Tab.OpenScope(prog); //topScore queda ahora apuntando a un nuevo Scope
             //El Scope anterior (universo) lo accedo via topScore.outer

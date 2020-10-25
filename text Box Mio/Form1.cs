@@ -236,7 +236,7 @@ namespace at.jku.ssw.cc //Compilador //text_Box_Mio
 
 
         //private void button3_Click(object sender, EventArgs e)  //inicializar
-        private void inicializa()  //inicializar
+        private void inicializa()  //inicializar 
         {
             Parser.cil = new Parser.Instruccion[Parser.maxnroDeInstrCorriente];
             /*   
@@ -1249,6 +1249,10 @@ namespace at.jku.ssw.cc //Compilador //text_Box_Mio
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            inicializa();
+           // Parser.muestraProducciones = Parser.muestraCargaDeInstrs = false;
+           // Tab.muestraTabSimb = true;
+            compilar();
 
         }
 
@@ -1439,6 +1443,11 @@ namespace at.jku.ssw.cc //Compilador //text_Box_Mio
         }
 
         private void inspeccionarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arbolTokens_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }

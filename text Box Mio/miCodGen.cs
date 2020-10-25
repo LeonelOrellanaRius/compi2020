@@ -222,10 +222,12 @@ namespace at.jku.ssw.cc
             if (pintar == "token")
             {
                 Program1.form1.Editor.SelectionColor = System.Drawing.Color.Red;
+               // Program1.form1.arbolTokens.SelectedNode.BackColor = System.Drawing.Color.Blue;
             }
             else
             {
                 Program1.form1.Editor.SelectionColor = System.Drawing.Color.LimeGreen;
+               // Program1.form1.arbolTokens.SelectedNode.BackColor = System.Drawing.Color.Green;
             }
             //Fin Modificacion Grupo 1 - 31/09/15
             Program1.form1.Editor.SelectionFont =
