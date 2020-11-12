@@ -76,7 +76,7 @@ public class Tab {
         chrSym = Tab.Insert(Symbol.Kinds.Meth, "chr", Tab.charType);
         Tab.OpenScope(chrSym);
         Tab.Insert(Symbol.Kinds.Arg, "i", Tab.intType); //el arg q toma es int (Un Symbol char)
-        Parser.MessageBoxCon3Preg(); // Orellana
+        //Parser.MessageBoxCon3Preg(); // Orellana mal colocado
         //Program1.form1.arbolTS.Nodes[0].Nodes[3].Nodes.Add("i | ARG");
         chrSym.nArgs = topScope.nArgs; //Fran 
         chrSym.nLocs = topScope.nLocs; //Fran
@@ -86,11 +86,11 @@ public class Tab {
 
         // ord(ch)
         ordSym = Tab.Insert(Symbol.Kinds.Meth, "ord", Tab.intType);//devuelve int
-        Parser.MessageBoxCon3Preg();// Orellana
+        //Parser.MessageBoxCon3Preg();// Orellana mal colocado
         //Program1.form1.arbolTS.Nodes[0].Nodes.Add("ord | METH");                                                    //char=tipo q devuelve el met (Struct)
         Tab.OpenScope(ordSym);
         Tab.Insert(Symbol.Kinds.Arg, "ch", Tab.charType);//el arg es char
-        Parser.MessageBoxCon3Preg();// Orellana
+        //Parser.MessageBoxCon3Preg();// Orellana mal colocado
         //Program1.form1.arbolTS.Nodes[0].Nodes[4].Nodes.Add("ch | ARG");
         ordSym.nArgs = topScope.nArgs; //Fran
         ordSym.nLocs = topScope.nLocs; //Fran
@@ -100,7 +100,7 @@ public class Tab {
 
         //len(arr)
         lenSym = Tab.Insert(Symbol.Kinds.Meth, "len", Tab.intType);//devuelve int
-        Parser.MessageBoxCon3Preg();// Orellana
+        //Parser.MessageBoxCon3Preg();// Orellana mal colocado
         //Program1.form1.arbolTS.Nodes[0].Nodes.Add("ord | METH");                                                    //char=tipo q devuelve el met (Struct)
         Tab.OpenScope(lenSym);
         //El arg q toma es un Symbol        con tipo Arr,   el tipo del Elem del Arr es noType            
@@ -109,7 +109,7 @@ public class Tab {
         //segun pag 41 de Tabla de simb.ppt, debiera se Tab.noType (en vez de intType)
         //pero el Tab.noType da error,
         Tab.Insert(Symbol.Kinds.Arg, "arr", tipoArr);
-        Parser.MessageBoxCon3Preg();// Orellana
+        //Parser.MessageBoxCon3Preg();// Orellana mal colocado
         //Program1.form1.arbolTS.Nodes[0].Nodes[5].Nodes.Add("arr | ARG");
         lenSym.nArgs = topScope.nArgs; //Fran
         lenSym.nLocs = topScope.nLocs; //Fran
@@ -132,13 +132,13 @@ public class Tab {
         {
             profundidad++;
             Program1.form1.arbolTS.Nodes.Add("Scope de :Type: " + sym.kind + " | Name: " + sym.name);
-            Parser.MessageBoxCon3Preg();// Orellana
+            // Parser.MessageBoxCon3Preg();// Orellana mal colocado
           //  Program1.form1.arbolTokens.Nodes.Add("Tokens: " +  + "LaToken:"); //Orellana probando
         }
         if (muestraTabSimb)
         {
             Program1.form1.instContinuar.ShowDialog();    //MessageBox.Show("ContinuarTSimb","T de simbolo");
-            Parser.MessageBoxCon3Preg();// Orellana
+            //Parser.MessageBoxCon3Preg();//Orellana mal colocado
         }   //Codigo Tabla de Simbolos
 	}
 	
