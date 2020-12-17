@@ -226,8 +226,8 @@ namespace at.jku.ssw.cc
             {
                 Program1.form1.arbolTokens.Nodes.Add("Pasada " + n + " - Token:  '" + token.str +"'"+ " - LaToken:  '" + laToken.str + "'"); //Orellana probando
                 n++;
-                Code.Colorear(token.str);
-                Code.Colorear(laToken.str);
+                //Code.Colorear("token");
+                //Code.Colorear(laToken.str);
             }
         }
 
@@ -256,8 +256,9 @@ namespace at.jku.ssw.cc
             Parser.MessageBoxCon3Preg();
             //antes del Check (Token.CLASS), token = ...(1,1),  laToken = ..."class".. y la = Token.CLASS
             Check(Token.CLASS);   //class ProgrPpal
-            //Se cumple que:  (la == expected) => ejecuta Scan => token = ..."class"... y laToden = ..."ProgrPpal" 
-            Code.Colorear("token");   //colorea "class" en ventana de Edicion
+            //Se cumple que:  (la == expected) => ejecuta Scan => token = ..."class"... y laToken = ..."ProgrPpal"
+            //colorea "class" en ventana de Edicion
+            Code.Colorear("token");   
             //"Program = 'class' ident PosDeclars '{' MethodDeclsOpc '}'."
             //Ya reconoció 'class', ahora va a reconocer ident
             program.Nodes.Add("ident");

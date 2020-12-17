@@ -218,6 +218,7 @@ namespace at.jku.ssw.cc
 
             restaurarRichTextBox1conNegro();
             Program1.form1.Editor.Select(Program1.form1.Editor.GetFirstCharIndexFromLine(linea1 - 1)+ col1 - 1,sizeToken1);
+            
             //Inicio Modificación Grupo 1 - 31/09/15 - Token = Pinta Rojo ; LaToken = Pinta Verde
             if (pintar == "token")
             {
